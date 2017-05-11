@@ -1,0 +1,6 @@
+log/
+migrations/
+.pyc
+#.log
+upload/
+db.*
