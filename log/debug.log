@@ -1,0 +1,30 @@
+ERROR 2017-05-11 07:04:52,077 base 25480 140327846979328 Internal Server Error: /
+Traceback (most recent call last):
+  File "/root/Envs/ml/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/Envs/ml/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sourav/workspace/explore/ml/ML_Image_Recognition/webapp/views.py", line 34, in image_classification
+    latest_result = ImageClassification.objects.filter().order_by("-created_date")[:5]
+NameError: name 'ImageClassification' is not defined
+ERROR 2017-05-11 07:13:40,325 base 25693 140241908029184 Internal Server Error: /
+Traceback (most recent call last):
+  File "/root/Envs/ml/lib/python3.5/site-packages/django/core/handlers/base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/Envs/ml/lib/python3.5/site-packages/django/core/handlers/base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sourav/workspace/explore/ml/ML_Image_Recognition/webapp/views.py", line 46, in image_recognization
+    image_recognization_result = recognize_image.run_inference_on_image(stoted_image_file)
+  File "/home/sourav/workspace/explore/ml/ML_Image_Recognition/webapp/recognize_image.py", line 144, in run_inference_on_image
+    create_graph()
+  File "/home/sourav/workspace/explore/ml/ML_Image_Recognition/webapp/recognize_image.py", line 125, in create_graph
+    graph_def.ParseFromString(f.read())
+  File "/root/Envs/ml/lib/python3.5/site-packages/tensorflow/python/lib/io/file_io.py", line 106, in read
+    self._preread_check()
+  File "/root/Envs/ml/lib/python3.5/site-packages/tensorflow/python/lib/io/file_io.py", line 73, in _preread_check
+    compat.as_bytes(self.__name), 1024 * 512, status)
+  File "/usr/lib/python3.5/contextlib.py", line 66, in __exit__
+    next(self.gen)
+  File "/root/Envs/ml/lib/python3.5/site-packages/tensorflow/python/framework/errors_impl.py", line 469, in raise_exception_on_not_ok_status
+    pywrap_tensorflow.TF_GetCode(status))
+tensorflow.python.framework.errors_impl.NotFoundError: /home/sourav/workspace/explore/ml/ML_Image_Recognition/tf_files/classify_image_graph_def.pb
